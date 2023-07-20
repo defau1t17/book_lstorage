@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" th:href="@{/mainPage.css}">
+</head>
+<body>
+
+
+<header class="main-header-body">
+    <div id="logo">
+        <a id="link">Click Me!</a>
+    </div>
+
+    <div id="search-body">
+        <form th:action="@{/search}" method="post">
+            <div id="search">
+                <input id="input-book-name" type="text" name="bookName">
+                <button id="search-button"><a id="link-search-button" th:href="@{/search}">Search</a></button>
+            </div>
+        </form>
+    </div>
+
+</header>
+
+
+<div class="main-books-list">
+    <form th:action="@{/}" method="post">
+        <ul id="list-body">
+            <li id="main-list" th:each="books : ${allBooks}">
+                <div id="book-block">
+                    <div id="image-block">
+                        <img id="book-image" th:src="@{${books.image}}">
+                    </div>
+                    <div id="book-info-block">
+                        <p id="book-title" th:text="${books.title}"></p>
+                        <p id="book-authors" th:text="${books.authors}"></p>
+                        <div id="book-button">
+                            <button th:value="${books.id}" id="book-get" name="bookId">Get Info</button>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+
+
+</body>
+</html>
