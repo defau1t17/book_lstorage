@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,18 +23,21 @@ public class MainPageController {
     @Autowired
     private MainPageService mainPageService;
 
-    @GetMapping("/")
+    @GetMapping("/books")
     public String mainPage(Model model) {
-        ArrayList<Book> allBooks = mainPageService.getAllBooks();
-        model.addAttribute("allBooks", allBooks);
+        model.addAttribute("allBooks",mainPageService.getAllBooks().getBooks());
         return "main";
     }
 
-    @PostMapping("/")
+    @PostMapping("/books")
     public String mainPage(@RequestParam(value = "bookId") String bookId) {
-        System.out.println(bookId + " ///");
+        System.out.println(bookId);
         return "redirect:/book/" + bookId.toLowerCase();
     }
 
+    @PostMapping("/books/search")
+    public String getSearchParam(@RequestParam(value = "bookName") String bookName) {
+        return "redirect:/search/" + bookName;
+    }
 
 }

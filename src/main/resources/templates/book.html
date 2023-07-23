@@ -10,20 +10,20 @@
 
 <header class="main-header-body">
     <div id="logo">
-        <a id="link">Click Me!</a>
+        <a id="link" th:href="@{/books}">Home</a>
     </div>
 
     <div id="search-body">
-        <form th:action="@{/search}" method="post">
+        <form th:action="@{/books/search}" method="post">
             <div id="search">
                 <input id="input-book-name" type="text" name="bookName">
-                <button id="search-button"><a id="link-search-button" th:href="@{/search}">Search</a></button>
+                <button id="search-button">Home</button>
+
             </div>
         </form>
     </div>
 
 </header>
-
 
 <div class="book-main-body">
 
@@ -36,12 +36,32 @@
         <p id="book-authors" th:text="'Author : ' +  ${bookInfo.book.authors}"></p>
         <p id="book-year" th:text="'Year : ' +  ${bookInfo.year}"></p>
         <p id="book-pages" th:text=" 'Pages : ' +  ${bookInfo.pages}"></p>
-
         <p id="book-description" th:text="${bookInfo.description}"></p>
+
     </div>
 
-
 </div>
+
+<div class="similar-books-body">
+    <div>
+        <p id="similar-books-header-text"> Similar Books </p>
+        <ul id="similar-books-block">
+            <li th:each="similar : ${similarBooks}" id="similar-books-list">
+                <div id="similar-book-block">
+                    <div id="similar-image-block">
+                        <a id="similar-book-link" th:href="@{/book/__${similar.id}__}">
+                            <image th:src="@{${similar.image} }" id="similar-book-image"></image>
+                        </a>
+                    </div>
+                    <div id="similar-text-block">
+                        <p id="similar-book-title" th:text="${similar.title}"></p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
 
 </body>
 </html>

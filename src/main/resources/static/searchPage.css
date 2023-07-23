@@ -78,127 +78,72 @@
 }
 
 
-.book-main-body {
+#link-search-button {
+    text-decoration: none;
+    font-size: 19px;
+    font-family: Candara;
+    color: #3f3f3f;
+}
+
+.main-books-list {
+    width: 100%;
     margin-top: 25px;
     display: flex;
+    height: auto;
+
+}
+
+
+#main-list {
+    width: calc(30% - 20px);
+    margin: 10px;
+    padding: 10px;
+    list-style-type: none;
+    display: inline-block;
+    justify-content: center;
     align-items: center;
 }
 
-#book-image-block {
-    margin-right: 20px;
-    width: 50%;
+#book-block {
+    height: 520px;
+}
+
+#image-block {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #book-image {
-    height: 450px;
-    border-radius: 7px;
+    border-radius: 12px;
     box-shadow: 2px 2px 2px #000;
+    height: 450px;
 }
 
 #book-info-block {
-    width: 50%;
     display: grid;
-    height: 450px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 #book-title {
-    font-size: 40px;
+    margin-top: 10px;
+    font-size: 25px;
     font-family: Candara;
-    font-weight: 900;
+    font-weight: 800;
     text-align: center;
 }
 
 #book-authors {
-    margin-top: 20px;
-    font-size: 30px;
+    margin-top: 5px;
     font-family: Candara;
-    font-weight: 900;
-    margin-left: 20px;
-}
-
-#book-year {
-    margin-top: 20px;
-
-    font-size: 30px;
-    font-family: Candara;
-    font-weight: 900;
-    margin-left: 20px;
-}
-
-#book-pages {
-    margin-top: 20px;
-
-    font-size: 30px;
-    font-family: Candara;
-    font-weight: 900;
-    margin-left: 20px;
-}
-
-#book-description {
-    margin-top: 20px;
-    font-size: 25px;
-    font-family: Candara;
-    font-weight: 900;
-    margin-left: 20px;
-}
-
-
-.similar-books-body {
-    width: 50%;
-    margin-top: 50px;
-    float: right;
-}
-
-#similar-books-block {
-    list-style: none;
-    overflow: hidden;
-}
-
-#similar-books-list {
-    width: 33.33%;
-    float: left;
-    box-sizing: border-box;
-    padding: 10px;
-}
-
-#similar-books-list:nth-child(4),
-#similar-books-list:nth-child(5) {
-    width: 50%;
-    float: left;
-}
-
-#similar-books-list:nth-child(3n+1) {
-    clear: both;
-}
-
-
-#similar-book-image {
-    height: 350px;
-    border-radius: 12px;
-    box-shadow: 2px 2px 2px #000;
-}
-
-#similar-image-block {
-    display: flex;
-    justify-content: center;
-}
-
-#similar-text-block {
-    margin-top: 10px;
+    font-size: 17px;
     text-align: center;
 }
 
-#similar-book-title {
-    font-size: 17px;
-    text-align: left;
-}
 
-#similar-books-header-text {
-    text-align: end;
-    font-size: 25px;
-    font-weight: 800;
-    margin-right: 50px;
-}
+
+
+
+
