@@ -117,6 +117,7 @@
 #book-image {
     border-radius: 12px;
     box-shadow: 2px 2px 2px #000;
+    width: 300px;
     height: 450px;
 }
 

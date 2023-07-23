@@ -29,7 +29,6 @@ public class SearchController {
     public String search(@PathVariable(value = "book") String bookName, Model model) {
         System.out.println(bookName);
         model.addAttribute("searchedBooks", service.findBooks(bookName).getBooks());
-        model.addAttribute("bookN", bookName);
         return "search";
     }
 
@@ -37,6 +36,7 @@ public class SearchController {
     public String search(@PathVariable(value = "book") String book, @RequestParam(value = "bookName") String bookName, Model model) {
         model.addAttribute("searchedBooks", service.findBooks(bookName).getBooks());
         model.addAttribute("bookN", bookName);
+
         return "redirect:/search/" + bookName;
     }
 
